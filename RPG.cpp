@@ -1,4 +1,4 @@
-#include <windows.h>//test
+#include <windows.h>
 #include <stdio.h>
 #include <conio.h>                 //Ä³¸¯ÅÍ ¿òÁ÷ÀÌ´Â  
 
@@ -47,7 +47,7 @@ int main(void){
 	}
 	gotoxy(Xx,Yy);
 	printf("¿Ê");
-	Sleep(9.2);
+	Sleep(9);
 		
 	}
 	
