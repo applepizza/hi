@@ -1,6 +1,6 @@
-#include <windows.h>
+#include <windows.h>//test
 #include <stdio.h>
-#include <conio.h>                 //Ä³¸¯ÅÍ ¿òÁ÷ÀÌ´Â  
+#include <conio.h>                 //Ã„Â³Â¸Â¯Ã…Ã Â¿Ã²ÃÃ·Ã€ÃŒÂ´Ã‚  
 
 void gotoxy(int x, int y){
 	
@@ -16,7 +16,7 @@ int main(void){
 	int Xx=20, Yy=30;
 	
 	gotoxy(Xx, Yy);
-	printf("¿Ê");
+	printf("Â¿ÃŠ");
 	
 	while(1){
 		
@@ -46,7 +46,7 @@ int main(void){
 		
 	}
 	gotoxy(Xx,Yy);
-	printf("¿Ê");
+	printf("Â¿ÃŠ");
 	Sleep(9.2);
 		
 	}
