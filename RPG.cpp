@@ -1,54 +1,88 @@
-#include <windows.h>
-#include <stdio.h>
-#include <conio.h>                 //Ä³¸¯ÅÍ ¿òÁ÷ÀÌ´Â  
-
-void gotoxy(int x, int y){
+	#include <windows.h>
+	#include <stdio.h>
+	#include <conio.h>                 
 	
-		COORD Cur = {Cur.X=x, Cur.Y=y};
-     
-    	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),Cur);
-}
-
-int main(void){
+	void gotoxy(int x, int y){
+		
+			COORD Cur = {Cur.X=x, Cur.Y=y};
+	     
+	    	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),Cur);
+	}
 	
-	char Position;
+	int main(void){
+		
+		//¾Æ ¸ð¸£°Í´Ù 
+	int map[10][30] = {
+		{7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7},
+		{7,2,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7},
+		{7,7,4,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7},
+		{7,7,7,1,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7},
+		{7,7,7,7,6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7},
+		{7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7},
+		{7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7},
+		{7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7},
+		{7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7},
+		{7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7}};
 	
-	int Xx=20, Yy=30;
 	
-	gotoxy(Xx, Yy);
-	printf("¿Ê");
-	
-	while(1){
+		char Position;
 		
-		if(kbhit()){
+		int Xx=12, Yy=4;
 		
+		//gotoxy(Xx, Yy);
+		//printf("¿Ê");
 		
-		system("cls");
-		
-		Position=getch();
-		
-		
-		switch(Position){
+		while(1){
 			
-			case 'w':
-				Yy--;
-				break; 
-				case 's':
-					Yy++;
-					break;
-					case 'a':
-					Xx--;
-					break;
-					case 'd':
-						Xx++;
+			if(kbhit()){
+			system("cls");
+			
+			
+			Position=getch();
+			
+			
+			switch(Position){
+				
+				case 'w':
+					Yy--;
+					break; 
+					case 's':
+						Yy++;
 						break;
+						case 'a':
+						Xx--;
+						break;
+						case 'd':
+							Xx++;
+							break;
+			}
+			
+		for(int y = 0;y<10;y++)
+	    {    
+	      for(int x = 0;x<30;x++)
+			{
+				if(x == Xx && y == Yy)
+					printf("¿Ê");
+		  	else if (map[y][x] == 7)
+		    printf("  ");
+		  else if (map[y][x] == 2)
+		    printf("¡á");
+		     else if (map[y][x] == 4)
+		   		 
+		    printf(",,");
+		     else if (map[y][x] == 1)
+		    printf("¢À");
+		     else if (map[y][x] == 6)
+		    printf("¡ã");
+		}
+	      printf("\n");
+	    }
+			
+		}
+//		gotoxy(Xx,Yy);
+		//printf("¿Ê");
+		Sleep(2);
+			
 		}
 		
 	}
-	gotoxy(Xx,Yy);
-	printf("¿Ê");
-	Sleep(9.2);
-		
-	}
-	
-}
